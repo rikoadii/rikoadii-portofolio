@@ -6,6 +6,7 @@ description: "Mengembangkan aplikasi PPOB dan Smart Budgeting menggunakan Flutte
 tags: [Dart, Flutter]
 category: Mobile
 draft: false
+image: './sakuya.png'
 ---
 
 ## Mobile Developer | SAKUYA

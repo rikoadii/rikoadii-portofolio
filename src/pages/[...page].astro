@@ -18,6 +18,102 @@ const len = page.data.length;
 ---
 
 <MainGridLayout>
+    <div id="filter-indicator" class="hidden card-base rounded-[var(--radius-large)] px-5 py-3 mb-4 flex items-center justify-between onload-animation">
+        <span id="filter-text" class="text-sm text-75 font-medium"></span>
+        <a id="filter-clear" href="/" class="text-sm font-bold text-[var(--primary)] hover:underline cursor-pointer">Clear Filter</a>
+    </div>
     <PostPage page={page}></PostPage>
     <Pagination class="mx-auto onload-animation" page={page} style={`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`}></Pagination>
 </MainGridLayout>
+
+<script>
+function applyFilter() {
+    const cards = document.querySelectorAll('.post-card');
+    if (!cards || cards.length === 0) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const filterCategory = params.get('project');
+    const filterTag = params.get('skill');
+
+    const indicator = document.getElementById('filter-indicator');
+    const filterText = document.getElementById('filter-text');
+    const separators = document.querySelectorAll('.post-card + div[class*="border-t"]');
+
+    if (!filterCategory && !filterTag) {
+        if (indicator) indicator.classList.add('hidden');
+        cards.forEach(card => {
+            (card as HTMLElement).style.display = '';
+        });
+        separators.forEach(sep => {
+            (sep as HTMLElement).style.display = '';
+        });
+        return;
+    }
+
+    // Show filter indicator
+    if (indicator && filterText) {
+        indicator.classList.remove('hidden');
+        if (filterCategory) {
+            filterText.textContent = `Filtering by project: ${filterCategory}`;
+        } else if (filterTag) {
+            filterText.textContent = `Filtering by skill: ${filterTag}`;
+        }
+    }
+
+    cards.forEach((card) => {
+        const cardEl = card as HTMLElement;
+        const cardCategory = cardEl.dataset.category || '';
+        const cardTags: string[] = JSON.parse(cardEl.dataset.tags || '[]');
+
+        let show = true;
+
+        if (filterCategory) {
+            show = cardCategory.toLowerCase() === filterCategory.toLowerCase();
+        }
+        if (filterTag) {
+            show = cardTags.some(t => t.toLowerCase() === filterTag.toLowerCase());
+        }
+
+        cardEl.style.display = show ? '' : 'none';
+
+        // Also hide the separator after hidden cards
+        const nextSibling = cardEl.nextElementSibling;
+        if (nextSibling && nextSibling.classList.contains('border-t-0') === false) {
+            (nextSibling as HTMLElement).style.display = show ? '' : 'none';
+        }
+    });
+}
+
+const setup = () => {
+    applyFilter();
+    // @ts-ignore
+    window.swup.hooks.on('page:view', applyFilter);
+}
+
+// Intercept clicks on filter links to avoid page reloads/transitions when already on the home page
+document.addEventListener('click', (e) => {
+    const link = (e.target as Element).closest('a');
+    if (!link) return;
+    
+    // Check if we are currently on the home page
+    const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+    const isHomePage = currentPath === '/' || currentPath === import.meta.env.BASE_URL || currentPath === import.meta.env.BASE_URL.replace(/\/$/, '');
+    
+    if (isHomePage) {
+        const href = link.getAttribute('href');
+        if (href && (href.startsWith('/?project=') || href.startsWith('/?skill=') || href === '/')) {
+            e.preventDefault();
+            e.stopPropagation(); // prevent Swup from intercepting this click!
+            window.history.pushState({}, '', href);
+            applyFilter();
+        }
+    }
+}, { capture: true });
+
+// @ts-ignore
+if (window.swup) {
+    setup()
+} else {
+    document.addEventListener("swup:enable", setup)
+}
+</script>

@@ -6,6 +6,7 @@ description: "Membangun ekosistem aplikasi ganda (Pasien & Psikolog) menggunakan
 tags: [Dart, Flutter]
 category: Mobile
 draft: false
+image: './mypsikolog.png'
 ---
 
 ## Mobile Developer | MyPsikolog & Dinamicare
@@ -17,3 +18,8 @@ Membangun ekosistem aplikasi ganda (Pasien & Psikolog) menggunakan **Flutter** u
 Mengintegrasikan fitur real-time komunikasi menggunakan **ZegoCloud SDK** (Video Call) dan **Push Notifications** untuk meningkatkan pengalaman pengguna.
 
 Mengelola alur transaksi keuangan dengan integrasi payment gateway **Midtrans** (Transfer Bank & Top-up Saldo) dan sistem reservasi jadwal yang kompleks.
+
+## Download
+
+- [MyPsikolog - Google Play Store](https://play.google.com/store/apps/details?id=com.m.mypsikolog)
+- [Dinamicare - Google Play Store](https://play.google.com/store/apps/details?id=com.m.expert.mobile)
