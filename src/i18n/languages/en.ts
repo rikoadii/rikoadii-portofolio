@@ -4,11 +4,11 @@ import type { Translation } from "../translation";
 export const en: Translation = {
 	[Key.home]: "Home",
 	[Key.about]: "About",
-	[Key.archive]: "Archive",
+	[Key.archive]: "Experience",
 	[Key.search]: "Search",
 
-	[Key.tags]: "Tags",
-	[Key.categories]: "Categories",
+	[Key.tags]: "Skills",
+	[Key.categories]: "Projects",
 	[Key.recentPosts]: "Recent Posts",
 
 	[Key.comments]: "Comments",
