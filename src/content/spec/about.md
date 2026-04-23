@@ -1,9 +1,7 @@
-# About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+# About Me
 
-::github{repo="saicaca/fuwari"}
+Based in West Lombok, NTB, I Riko Adi Ranasmita a Fullstack Developer focused on building seamless mobile and web applications. My experience ranges from developing healthcare ecosystems and fintech platforms to optimizing corporate web systems. I specialize in Flutter, Kotlin (Jetpack Compose), and React.js, with a deep interest in bridging complex backend logic with intuitive frontend design. To me, technology is the tool, but problem-solving is the art—delivering clean, efficient, and impactful code is my priority.
 
-> ### Sources of images used in this site
-> - [Unsplash](https://unsplash.com/)
-> - [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-> - [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+# What am I doing right now?
+- Gain more experience
+- Finish my studies

@@ -1,0 +1,55 @@
+---
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<MainGridLayout title="Contact Me" description="Contact and social links">
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative">
+        <div class="card-base z-10 px-9 py-6 relative w-full">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold mb-4 text-90 transition">Contact Me</h1>
+                <p class="text-75 transition">
+                    Tertarik untuk berkolaborasi atau sekadar ingin menyapa? Hubungi saya melalui platform di bawah ini!
+                </p>
+            </div>
+            
+            <div class="flex flex-col gap-4 max-w-xl">
+                <!-- Email -->
+                <a href="mailto:radi60372@gmail.com" class="group flex items-center gap-5 p-5 rounded-2xl bg-[var(--card-bg)] border-[1px] border-[var(--line-divider)] hover:border-[var(--primary)] hover:bg-[var(--btn-plain-bg-hover)] transition-all active:scale-[0.98]">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-red-500/10 text-red-500 group-hover:scale-110 group-hover:bg-red-500 group-hover:text-white transition-all duration-300">
+                        <Icon name="material-symbols:mail-rounded" class="text-2xl" />
+                    </div>
+                    <div>
+                        <div class="font-bold text-90 text-lg transition">Email</div>
+                        <div class="text-75 text-sm transition">radi60372@gmail.com</div>
+                    </div>
+                    <Icon name="material-symbols:chevron-right-rounded" class="ml-auto text-3xl text-75 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-[var(--primary)] transition-all" />
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/rikoadiranasmita/" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-[var(--card-bg)] border-[1px] border-[var(--line-divider)] hover:border-[var(--primary)] hover:bg-[var(--btn-plain-bg-hover)] transition-all active:scale-[0.98]">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#0077b5]/10 text-[#0077b5] group-hover:scale-110 group-hover:bg-[#0077b5] group-hover:text-white transition-all duration-300">
+                        <Icon name="fa6-brands:linkedin" class="text-2xl" />
+                    </div>
+                    <div>
+                        <div class="font-bold text-90 text-lg transition">LinkedIn</div>
+                        <div class="text-75 text-sm transition">linkedin.com/in/rikoadiranasmita</div>
+                    </div>
+                    <Icon name="material-symbols:chevron-right-rounded" class="ml-auto text-3xl text-75 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-[var(--primary)] transition-all" />
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/rikoadi" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-[var(--card-bg)] border-[1px] border-[var(--line-divider)] hover:border-[var(--primary)] hover:bg-[var(--btn-plain-bg-hover)] transition-all active:scale-[0.98]">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-neutral-500/10 text-neutral-600 dark:text-neutral-300 group-hover:scale-110 group-hover:bg-[#24292e] dark:group-hover:bg-white dark:group-hover:text-black group-hover:text-white transition-all duration-300">
+                        <Icon name="fa6-brands:github" class="text-2xl" />
+                    </div>
+                    <div>
+                        <div class="font-bold text-90 text-lg transition">GitHub</div>
+                        <div class="text-75 text-sm transition">github.com/rikoadi</div>
+                    </div>
+                    <Icon name="material-symbols:chevron-right-rounded" class="ml-auto text-3xl text-75 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-[var(--primary)] transition-all" />
+                </a>
+            </div>
+        </div>
+    </div>
+</MainGridLayout>
