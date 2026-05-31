@@ -1,6 +1,6 @@
 ---
 title: "R Store Bot Telegram"
-published: 2026-06-01
+published: 2026-03-04
 description: "Bot Telegram pintar untuk toko digital otomatis yang menggabungkan katalog produk, cek stok real-time, simulasi pembayaran QRIS, dan Customer Service berbasis AI dalam satu workflow n8n."
 tags: [n8n, "Telegram Bot API", "Gemini / OpenRouter", Pinecone, "Google Sheets"]
 category: Automation
